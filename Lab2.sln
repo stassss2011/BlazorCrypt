@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pwa", "Pwa\Pwa.csproj", "{8FDE06DC-1ADC-4B12-87EC-46F4281394D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLibrary", "CommonLibrary\CommonLibrary.csproj", "{8DD7C72E-75F9-497D-9253-910D1E048CF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tui", "Tui\Tui.csproj", "{9DCA3AEF-76AA-44DE-8FE6-5870F9D4AB11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FDE06DC-1ADC-4B12-87EC-46F4281394D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FDE06DC-1ADC-4B12-87EC-46F4281394D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FDE06DC-1ADC-4B12-87EC-46F4281394D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FDE06DC-1ADC-4B12-87EC-46F4281394D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DD7C72E-75F9-497D-9253-910D1E048CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DD7C72E-75F9-497D-9253-910D1E048CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DD7C72E-75F9-497D-9253-910D1E048CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DD7C72E-75F9-497D-9253-910D1E048CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DCA3AEF-76AA-44DE-8FE6-5870F9D4AB11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DCA3AEF-76AA-44DE-8FE6-5870F9D4AB11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DCA3AEF-76AA-44DE-8FE6-5870F9D4AB11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DCA3AEF-76AA-44DE-8FE6-5870F9D4AB11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
