@@ -100,10 +100,18 @@ public class BabbageAttack : IAttack
             return Bruteforce(onlyLettersMessage, keyBestFitPos);
         });
 
-        return string.Join("\n\n", output
+        var outputStrings = output
             .SelectMany(x => x)
             .OrderBy(x => x.Item1)
-            .Select(x => $"Score: {x.Item1}\nKey: {x.Item2}\nMessage: {x.Item3}"));
+            .Select(x => $"Score: {x.Item1}\nKey: {x.Item2}\nMessage: {x.Item3}")
+            .ToList();
+
+        if (outputStrings.Count == 0)
+        {
+            outputStrings.Add("No possible keys were found");
+        }
+        
+        return string.Join("\n\n", outputStrings);
     }
 
     private static List<(int, string)> AnalyseFreq(int tryKeyLen, string encryptedMessage)
@@ -180,7 +188,7 @@ public class BabbageAttack : IAttack
     {
         var keys = new List<string>();
 
-        if (keyBestFitPos.Any()) return new List<string>();
+        if (!keyBestFitPos.Any()) return new List<string>();
 
         var root = keyBestFitPos.First();
         var possibleRootChars = root.Item2;
@@ -190,7 +198,7 @@ public class BabbageAttack : IAttack
                 .Skip(1)
                 .ToList());
 
-            if (combinations.Any())
+            if (!combinations.Any())
                 keys.Add(rootChar.ToString());
             keys.AddRange(combinations.Select(x => rootChar + x));
         }

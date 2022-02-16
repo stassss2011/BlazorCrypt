@@ -1,3 +1,4 @@
+using System.Reactive.Linq;
 using CommonLibrary.Models;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
@@ -18,6 +19,7 @@ public class CaesarViewModel : ReactiveObject
                 x => x.Alphabet,
                 x => x.InputText
             )
+            .Throttle(TimeSpan.FromMilliseconds(100))
             .Subscribe(_ => UpdateCipher());
     }
 

@@ -1,3 +1,4 @@
+using System.Reactive.Linq;
 using CommonLibrary.Models;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
@@ -17,6 +18,7 @@ public class BabbageViewModel : ReactiveObject
                 x => x.MaxKeyLen,
                 x => x.InputText
             )
+            .Throttle(TimeSpan.FromMilliseconds(100))
             .Subscribe(_ => UpdateAttack());
     }
 
@@ -42,8 +44,9 @@ public class BabbageViewModel : ReactiveObject
         OutputText = "";
     }
 
-    public void Decrypt()
+    public async void Decrypt()
     {
-        OutputText = Attack.Attack();
+        var decryptTask = Task.Run((() => Attack.Attack()));
+        OutputText = await decryptTask;
     }
 }
